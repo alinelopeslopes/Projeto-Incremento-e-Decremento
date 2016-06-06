@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExecutar));
             this.lbApresentacaoData = new System.Windows.Forms.Label();
             this.lbQuantidade = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.rbIncrementar = new System.Windows.Forms.RadioButton();
             this.rbDecrementar = new System.Windows.Forms.RadioButton();
             this.btnExecutar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gbOpcoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txtQuantidade.TabIndex = 2;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
             // 
             // gbOpcoes
             // 
@@ -107,6 +110,12 @@
             this.btnExecutar.UseVisualStyleBackColor = true;
             this.btnExecutar.Click += new System.EventHandler(this.btnExecutar_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmExecutar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,7 +133,6 @@
             this.Name = "frmExecutar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incremento e Decremento de data/hora";
-            this.Load += new System.EventHandler(this.frmExecutar_Load);
             this.gbOpcoes.ResumeLayout(false);
             this.gbOpcoes.PerformLayout();
             this.ResumeLayout(false);
@@ -141,5 +149,6 @@
         private System.Windows.Forms.RadioButton rbDecrementar;
         private System.Windows.Forms.RadioButton rbIncrementar;
         private System.Windows.Forms.Button btnExecutar;
+        private System.Windows.Forms.Timer timer1;
     }
 }
