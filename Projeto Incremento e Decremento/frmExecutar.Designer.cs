@@ -34,8 +34,8 @@
             this.lbQuantidade = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.gbOpcoes = new System.Windows.Forms.GroupBox();
-            this.rbIncrementar = new System.Windows.Forms.RadioButton();
             this.rbDecrementar = new System.Windows.Forms.RadioButton();
+            this.rbIncrementar = new System.Windows.Forms.RadioButton();
             this.btnExecutar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gbOpcoes.SuspendLayout();
@@ -46,9 +46,8 @@
             this.lbApresentacaoData.AutoSize = true;
             this.lbApresentacaoData.Location = new System.Drawing.Point(109, 34);
             this.lbApresentacaoData.Name = "lbApresentacaoData";
-            this.lbApresentacaoData.Size = new System.Drawing.Size(12, 13);
+            this.lbApresentacaoData.Size = new System.Drawing.Size(0, 13);
             this.lbApresentacaoData.TabIndex = 0;
-            this.lbApresentacaoData.Text = "\"";
             // 
             // lbQuantidade
             // 
@@ -78,17 +77,6 @@
             this.gbOpcoes.TabStop = false;
             this.gbOpcoes.Text = "Opções";
             // 
-            // rbIncrementar
-            // 
-            this.rbIncrementar.AutoSize = true;
-            this.rbIncrementar.Location = new System.Drawing.Point(59, 30);
-            this.rbIncrementar.Name = "rbIncrementar";
-            this.rbIncrementar.Size = new System.Drawing.Size(81, 17);
-            this.rbIncrementar.TabIndex = 0;
-            this.rbIncrementar.TabStop = true;
-            this.rbIncrementar.Text = "Incrementar";
-            this.rbIncrementar.UseVisualStyleBackColor = true;
-            // 
             // rbDecrementar
             // 
             this.rbDecrementar.AutoSize = true;
@@ -99,6 +87,17 @@
             this.rbDecrementar.TabStop = true;
             this.rbDecrementar.Text = "Decrementar";
             this.rbDecrementar.UseVisualStyleBackColor = true;
+            // 
+            // rbIncrementar
+            // 
+            this.rbIncrementar.AutoSize = true;
+            this.rbIncrementar.Location = new System.Drawing.Point(59, 30);
+            this.rbIncrementar.Name = "rbIncrementar";
+            this.rbIncrementar.Size = new System.Drawing.Size(81, 17);
+            this.rbIncrementar.TabIndex = 0;
+            this.rbIncrementar.TabStop = true;
+            this.rbIncrementar.Text = "Incrementar";
+            this.rbIncrementar.UseVisualStyleBackColor = true;
             // 
             // btnExecutar
             // 
@@ -133,6 +132,7 @@
             this.Name = "frmExecutar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incremento e Decremento de data/hora";
+            this.Load += new System.EventHandler(this.frmExecutar_Load);
             this.gbOpcoes.ResumeLayout(false);
             this.gbOpcoes.PerformLayout();
             this.ResumeLayout(false);

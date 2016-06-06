@@ -97,5 +97,10 @@ namespace Projeto_Incremento_e_Decremento
                 e.Handled = true;
             }
         }
+
+        private void frmExecutar_Load(object sender, EventArgs e)
+        {
+            timer1_Tick(sender, e);
+        }
     }
 }
