@@ -15,5 +15,12 @@ namespace Projeto_Incremento_e_Decremento
         {
             InitializeComponent();
         }
+
+        private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //chamada do formulário "executar"
+            frmExecutar executar = new frmExecutar();
+            executar.ShowDialog();
+        }
     }
 }
