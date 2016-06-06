@@ -105,6 +105,7 @@
             this.btnExecutar.TabIndex = 4;
             this.btnExecutar.Text = "Executar";
             this.btnExecutar.UseVisualStyleBackColor = true;
+            this.btnExecutar.Click += new System.EventHandler(this.btnExecutar_Click);
             // 
             // frmExecutar
             // 
@@ -123,6 +124,7 @@
             this.Name = "frmExecutar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incremento e Decremento de data/hora";
+            this.Load += new System.EventHandler(this.frmExecutar_Load);
             this.gbOpcoes.ResumeLayout(false);
             this.gbOpcoes.PerformLayout();
             this.ResumeLayout(false);
