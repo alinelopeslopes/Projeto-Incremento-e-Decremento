@@ -11,10 +11,30 @@ namespace Projeto_Incremento_e_Decremento
 {
     public partial class frmExecutar : Form
     {
-        DateTime data_hora;
+        DateTime data_hora;//criando variavel global para usar em metodos diferentes
+        
+        string tipoPeriodo;//criando o tipo de periodo para definir a mensagem para "Bom Dia" ou "Boa noite"
+        
+        int hora;//criando variavel global para fazer comparação do horário, para definir o periodo
+
         public frmExecutar()
         {
             InitializeComponent();
+        }
+
+        public void TipoPediodo()//criando método para definir periodo
+        {
+            //condição para definição de periodo
+            if ((hora >= 00) && (hora <= 11))
+            {
+                tipoPeriodo = "Bom Dia!";
+            }
+            else if ((hora >= 12) && (hora <= 18))
+            {
+                tipoPeriodo = "Boa Tarde !";
+            }
+            else
+                tipoPeriodo = "Boa Noite";
         }
 
         private void frmExecutar_Load(object sender, EventArgs e)
@@ -37,14 +57,24 @@ namespace Projeto_Incremento_e_Decremento
             if (rbIncrementar.Checked)//Se incremento estiver selecionado executa
             {
                 data_hora = data_hora.Add(tipohora);//função "Add" soma valor.
-                agora = data_hora.ToString();
-                MessageBox.Show(" Hoje é : " + agora);
+                agora = data_hora.ToString();//salvando valor ´pós a soma.
+
+                //salvando valor apenas da hora, após converter em 'int' dentro da variavel hora
+                hora = Convert.ToInt32(Convert.ToDateTime(agora).Hour.ToString());
+                TipoPediodo();//chamando o método para testar o periodo do dia
+
+                MessageBox.Show(tipoPeriodo + " Hoje é : " + agora);
+                data_hora = DateTime.Now;//retornando o valor da data atual
             }
             else if (rbDecrementar.Checked)//se decremento estiver selecionado executa.
             {
                 data_hora = data_hora.Subtract(tipohora);//função "Subtract" Subtrai valor.
                 agora = data_hora.ToString();
-                MessageBox.Show(" Hoje é : " + agora);
+                hora = Convert.ToInt32(Convert.ToDateTime(agora).Hour.ToString());
+                TipoPediodo();
+
+                MessageBox.Show(tipoPeriodo + "Hoje é : " + agora);
+                data_hora = DateTime.Now;
             }
             else //se nenhuma opção estiver selecionada aparece a mensagem de erro
             {
