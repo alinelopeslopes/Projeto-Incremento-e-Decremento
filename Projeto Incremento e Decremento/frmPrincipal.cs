@@ -22,5 +22,15 @@ namespace Projeto_Incremento_e_Decremento
             frmExecutar executar = new frmExecutar();
             executar.ShowDialog();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Usando métodos de confirmação "Janela de confirmação antes de sair do Programa".
+            if (MessageBox.Show("Deseja Realmente Sair?", "Confirmação", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();//fechando formulário atual
+            }
+        }
     }
 }

@@ -74,7 +74,7 @@ namespace Projeto_Incremento_e_Decremento
                 }
                 else //se nenhuma opção estiver selecionada aparece a mensagem de erro
                 {
-                    MessageBox.Show("Selecione uma das opçoes: 'Incremento' ou 'Decremento'");
+                    MessageBox.Show("Selecione uma das opções: 'Incremento' ou 'Decremento'");
                 }
             }
 
@@ -90,8 +90,8 @@ namespace Projeto_Incremento_e_Decremento
 
         private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Se a tecla digitada não for número
-            if (!char.IsDigit(e.KeyChar))
+            //Se a tecla digitada for igual a letras
+            if (char.IsLetter(e.KeyChar))
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
