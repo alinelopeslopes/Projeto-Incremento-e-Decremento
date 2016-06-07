@@ -57,7 +57,7 @@ namespace Projeto_Incremento_e_Decremento
                     hora = Convert.ToInt32(Convert.ToDateTime(agora).Hour.ToString());
                     TipoPediodo();//chamando o método para testar o periodo do dia
 
-                    MessageBox.Show(tipoPeriodo + " Hoje é : " + agora);
+                    MessageBox.Show(tipoPeriodo + " Hoje é : " + Convert.ToDateTime(agora).ToShortDateString() + " - " + Convert.ToDateTime(agora).ToShortTimeString());
                     data_hora = DateTime.Now;//retornando o valor da data atual
                     txtQuantidade.Clear();//limpando a caixa de texto
                 }
@@ -68,7 +68,7 @@ namespace Projeto_Incremento_e_Decremento
                     hora = Convert.ToInt32(Convert.ToDateTime(agora).Hour.ToString());
                     TipoPediodo();
 
-                    MessageBox.Show(tipoPeriodo + "Hoje é : " + agora);
+                    MessageBox.Show(tipoPeriodo + " Hoje é : " + Convert.ToDateTime(agora).ToShortDateString() +" - " + Convert.ToDateTime(agora).ToShortTimeString());
                     data_hora = DateTime.Now;
                     txtQuantidade.Clear();
                 }
